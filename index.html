@@ -8,11 +8,16 @@
     <title>Image comparison</title>
   </head>
   <body>
-    <div class="comparison_container">
-      <div class="comparison__before">
-        <img src="image1.jpg" alt="" class="comparison__image" width="400" />
-      </div>
-      <img src="image2.jpg" alt="" class="comparison__image" width="400" />
+    <div class="comparison__container">
+      <img src="image1.jpg" width="750" class="comparison__img" />
+
+      <img
+        src="image2.jpg"
+        width="750"
+        class="comparison__img comparison__overlay"
+      />
+
+      <div class="comparison__slider"></div>
     </div>
     <script src="script.js"></script>
   </body>
