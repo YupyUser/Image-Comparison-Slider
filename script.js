@@ -5,12 +5,12 @@ let overlayElem = document.querySelector('.comparison__overlay');
 let slider = document.querySelector('.comparison__slider');
 
 // finding img width
-let width = overlayElem.offsetWidth;
+let width = overlayElem.getBoundingClientRect().width;
 
 
 slider.onmousedown = function (event) {
-    console.log(width)
-
+    
+    
     // completing only our tasks
     event.preventDefault();
     
@@ -24,13 +24,24 @@ slider.onmousedown = function (event) {
 
     // moving on image
     document.onmousemove = (e) => {
-
-        // move if cursor in img
+        
         if (e.pageX > overlayElem.getBoundingClientRect().x && e.pageX < overlayElem.getBoundingClientRect().x + width) {
+            
+            // move if cursor in img
             moveAt(slider,e);
+            
+            // setting img addiction from slider
+            overlayElem.style.width = (e.pageX - overlayElem.getBoundingClientRect().x) + 'px';
+        
+            // setting background(main image)
+            document.querySelector('.comparison__container').style.background = 'url("/image1.jpg")';
         }
-        // setting img addiction from slider
-        overlayElem.style.width = (e.pageX - overlayElem.getBoundingClientRect().x) + 'px';
+        
+        // turning off browser drag n drop
+        slider.ondragstart = function() {
+            return false;
+          };
+        
             
     }   
     
@@ -46,5 +57,7 @@ function moveAt (block, event) {
     block.style.left = event.pageX - block.offsetWidth / 2 + "px";
 }
 
-
-
+// setting start position to slider (on the half of image)
+slider.style.position = 'absolute';
+slider.style.left = (overlayElem.getBoundingClientRect().x + (overlayElem.getBoundingClientRect().width / 2) - slider.getBoundingClientRect().width ) + 'px';
+overlayElem.style.width = (overlayElem.getBoundingClientRect().x + (overlayElem.getBoundingClientRect().width / 2)) + 'px';

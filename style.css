@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --img-width: 750px;
+    --img-height: 939px;
+}
+ 
+
+.comparison__overlay {
+    position: absolute;
+    content: ' ';
+    width: 750px;
+    height: var(--img-height);
+    background: url('/image2.jpg') no-repeat ;
+    background-size: cover;
+}
+
+.comparison__container {
+    position: absolute;
+    background: url('/image1.jpg') no-repeat;
+    background-size: cover;
+    width: var(--img-width);
+    height: var(--img-height);
+    border: 1px solid black;
+}
+
+.comparison__slider {
+    position: relative;
+    z-index: 10;
+    content: '';
+    height: var(--img-height);
+    width: 20px;
+    background-color: blue;
+}
