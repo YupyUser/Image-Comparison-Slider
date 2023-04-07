@@ -34,7 +34,7 @@ slider.onmousedown = function (event) {
             overlayElem.style.width = (e.pageX - overlayElem.getBoundingClientRect().x) + 'px';
         
             // setting background(main image)
-            document.querySelector('.comparison__container').style.background = 'url("/image1.jpg")';
+            document.querySelector('.comparison__container').style.background = 'url("img/image1.jpg")';
         }
         
         // turning off browser drag n drop
