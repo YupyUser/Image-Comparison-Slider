@@ -4,4 +4,4 @@
 - CSS
 - HTML
 
-## [TEST]('https://yupyuser.github.io/Image-Comparison-Slider/')
+## [TEST](https://yupyuser.github.io/Image-Comparison-Slider/)
